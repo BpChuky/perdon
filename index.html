@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Me perdonas?</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fefefe;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 40px;
+            font-size: 2em;
+        }
+
+        .boton {
+            font-size: 1.2em;
+            padding: 15px 30px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        #no {
+            background-color: #e74c3c;
+            position: absolute;
+        }
+
+        @media (max-width: 600px) {
+            .boton {
+                font-size: 1em;
+                padding: 12px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>¿Me perdonas? 🙏</h1>
+    <button class="boton" onclick="responder()">Sí</button>
+    <button class="boton" id="no" ontouchstart="moverBoton()" onclick="moverBoton()">No</button>
+    <h2>Yami te amo</h2>
+    <script>
+        function responder() {
+            alert("¡Sabía que dirías que sí! ❤️");
+        }
+
+        function moverBoton() {
+            const boton = document.getElementById("no");
+            const ancho = window.innerWidth - boton.offsetWidth;
+            const alto = window.innerHeight - boton.offsetHeight;
+
+            const nuevoX = Math.random() * ancho;
+            const nuevoY = Math.random() * alto;
+
+            boton.style.left = nuevoX + "px";
+            boton.style.top = nuevoY + "px";
+        }
+    </script>
+</body>
+</html>
